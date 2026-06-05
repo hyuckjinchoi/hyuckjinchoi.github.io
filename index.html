@@ -1,0 +1,851 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hyuckjin Choi | Assistant Professor</title>
+  <meta name="description" content="Hyuckjin Choi is an Assistant Professor at Kyushu University researching wireless sensing, human sensing, signal processing, IoT, ubiquitous computing, and machine learning.">
+  <meta name="author" content="Hyuckjin Choi">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Hyuckjin Choi | Assistant Professor">
+  <meta property="og:description" content="Wireless sensing for human-centered systems.">
+  <meta property="og:site_name" content="Hyuckjin Choi">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hyuckjin Choi | Assistant Professor">
+  <meta name="twitter:description" content="Wireless sensing for human-centered systems.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23181713'/%3E%3Ctext x='32' y='39' text-anchor='middle' font-family='monospace' font-size='22' font-weight='700' fill='%23f7f3ea'%3EHC%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      --paper: #f7f3ea;
+      --ink: #181713;
+      --text: #302d27;
+      --muted: #6d675e;
+      --line: #d8d0c2;
+      --teal: #0f766e;
+      --red: #a83f32;
+      --panel: #fffdf8;
+      --field: #233834;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(90deg, rgba(24, 23, 19, 0.035) 1px, transparent 1px) 0 0 / 96px 96px,
+        var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 1520px;
+      margin: 0 auto;
+      padding: 42px clamp(22px, 5vw, 68px) 56px;
+    }
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 750;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      color: var(--paper);
+      background: var(--ink);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 15px;
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: clamp(16px, 2.4vw, 34px);
+      color: var(--muted);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .site-nav a:hover {
+      color: var(--ink);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+      gap: clamp(38px, 5vw, 72px);
+      padding: clamp(62px, 8vw, 96px) 0 72px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 26px;
+      color: var(--teal);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 13px;
+      line-height: 1.3;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 42px;
+      height: 1px;
+      background: var(--teal);
+      flex: 0 0 auto;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 780px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(58px, 7vw, 108px);
+      line-height: 0.94;
+      font-weight: 500;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 680px;
+      margin: 34px 0 0;
+      color: var(--text);
+      font-size: clamp(19px, 2vw, 25px);
+      line-height: 1.48;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 36px;
+    }
+
+    .pill {
+      max-width: 100%;
+      min-width: 0;
+      padding: 9px 12px;
+      border: 1px solid var(--line);
+      background: rgba(255, 253, 248, 0.56);
+      color: var(--text);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 12px;
+      overflow-wrap: anywhere;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 38px;
+    }
+
+    .button {
+      min-width: 148px;
+      padding: 14px 18px;
+      border: 1px solid var(--ink);
+      font-size: 14px;
+      font-weight: 750;
+      text-align: center;
+    }
+
+    .button.primary {
+      color: var(--paper);
+      background: var(--ink);
+    }
+
+    .hero-side {
+      display: grid;
+      align-content: start;
+      gap: 22px;
+      min-width: 0;
+    }
+
+    .signal-visual {
+      position: relative;
+      min-height: 420px;
+      border: 1px solid var(--ink);
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 24% 26%, rgba(247, 243, 234, 0.22) 0 8%, transparent 9%),
+        radial-gradient(circle at 74% 68%, rgba(247, 243, 234, 0.14) 0 14%, transparent 15%),
+        linear-gradient(135deg, rgba(15, 118, 110, 0.94), rgba(168, 63, 50, 0.9)),
+        var(--field);
+    }
+
+    .signal-visual svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .visual-caption {
+      position: absolute;
+      left: 34px;
+      bottom: 32px;
+      color: rgba(255, 253, 248, 0.92);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: clamp(28px, 3.2vw, 48px);
+      line-height: 1.04;
+    }
+
+    .currently {
+      display: grid;
+      grid-template-columns: 142px 1fr;
+      gap: 24px;
+      padding: 24px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .label {
+      color: var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    .current-list,
+    .plain-list {
+      display: grid;
+      gap: 11px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .current-list {
+      font-size: 16px;
+      line-height: 1.38;
+    }
+
+    .current-list span {
+      color: var(--red);
+      font-weight: 800;
+    }
+
+    .section {
+      display: grid;
+      grid-template-columns: minmax(190px, 0.32fr) minmax(0, 1fr);
+      gap: clamp(28px, 5vw, 70px);
+      padding: 58px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-title {
+      margin: 0;
+      color: var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 13px;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(300px, 0.55fr);
+      gap: clamp(28px, 4vw, 54px);
+    }
+
+    .profile-copy {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(20px, 2.2vw, 29px);
+      line-height: 1.42;
+      color: var(--text);
+    }
+
+    .contact-block {
+      display: grid;
+      gap: 16px;
+      align-content: start;
+      padding-top: 6px;
+    }
+
+    .contact-line {
+      display: grid;
+      grid-template-columns: 84px 1fr;
+      gap: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+      font-size: 15px;
+    }
+
+    .contact-line span:first-child {
+      color: var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    .interest-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .interest {
+      min-height: 126px;
+      padding: 18px;
+      background: rgba(255, 253, 248, 0.54);
+      display: grid;
+      align-content: space-between;
+    }
+
+    .interest strong {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 25px;
+      font-weight: 500;
+      line-height: 1.05;
+    }
+
+    .interest span {
+      color: var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 0;
+    }
+
+    .timeline-item,
+    .publication,
+    .grant-item {
+      display: grid;
+      grid-template-columns: 156px minmax(0, 1fr);
+      gap: 28px;
+      padding: 24px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .timeline-item:last-child,
+    .publication:last-child,
+    .grant-item:last-child {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .time {
+      color: var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .item-title {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(24px, 2.3vw, 34px);
+      line-height: 1.08;
+      font-weight: 500;
+    }
+
+    .item-subtitle,
+    .publication p,
+    .grant-item p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .publication {
+      grid-template-columns: 72px minmax(0, 1fr) 82px;
+      align-items: start;
+    }
+
+    .pub-index {
+      color: var(--red);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .pub-venue {
+      justify-self: end;
+      padding: 6px 9px;
+      border: 1px solid var(--line);
+      background: rgba(255, 253, 248, 0.54);
+      color: var(--field);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 12px;
+    }
+
+    .awards {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .award {
+      min-height: 170px;
+      padding: 17px;
+      background: rgba(255, 253, 248, 0.54);
+      display: grid;
+      align-content: start;
+      gap: 18px;
+    }
+
+    .award strong {
+      color: var(--red);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 13px;
+    }
+
+    .award span {
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.36;
+    }
+
+    .committee-list {
+      columns: 2;
+      column-gap: 48px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .committee-list li {
+      break-inside: avoid;
+      padding: 0 0 18px;
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    .committee-list strong {
+      color: var(--red);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 12px;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 28px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 980px) {
+      .site-header,
+      .footer {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .site-nav {
+        flex-wrap: wrap;
+      }
+
+      .hero,
+      .section,
+      .profile-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 46px;
+      }
+
+      .signal-visual {
+        min-height: 330px;
+      }
+
+      .interest-grid,
+      .awards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .committee-list {
+        columns: 1;
+      }
+    }
+
+    @media (max-width: 640px) {
+      body {
+        overflow-x: hidden;
+      }
+
+      .page {
+        padding-inline: 18px;
+      }
+
+      .hero > div,
+      .meta-row,
+      .actions {
+        width: 100%;
+        min-width: 0;
+        max-width: calc(100vw - 36px);
+      }
+
+      h1 {
+        max-width: 100%;
+        font-size: 40px;
+        overflow-wrap: break-word;
+      }
+
+      .lead {
+        width: 100%;
+        max-width: calc(100vw - 36px);
+        font-size: 18px;
+        overflow-wrap: break-word;
+      }
+
+      .eyebrow {
+        align-items: flex-start;
+        font-size: 11px;
+        overflow-wrap: anywhere;
+      }
+
+      .eyebrow::before {
+        width: 40px;
+        margin-top: 7px;
+      }
+
+      .hero-side {
+        width: 100%;
+      }
+
+      .signal-visual {
+        min-height: 300px;
+      }
+
+      .visual-caption {
+        left: 22px;
+        bottom: 24px;
+        font-size: 30px;
+      }
+
+      .currently,
+      .timeline-item,
+      .grant-item,
+      .publication {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .publication {
+        position: relative;
+      }
+
+      .pub-venue {
+        justify-self: start;
+      }
+
+      .interest-grid,
+      .awards {
+        grid-template-columns: 1fr;
+      }
+
+      .button {
+        width: 100%;
+        min-width: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Hyuckjin Choi home">
+        <span class="brand-mark">HC</span>
+        <span>Hyuckjin Choi</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#profile">Profile</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#career">Career</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero" id="top">
+      <div>
+        <div class="eyebrow">Assistant Professor, Ph.D. / Kyushu University</div>
+        <h1>Wireless sensing for human-centered systems.</h1>
+        <p class="lead">Hyuckjin Choi researches wireless sensing,<br> human sensing, activity recognition,<br> signal processing, IoT,<br> ubiquitous computing, and machine learning.</p>
+        <div class="meta-row" aria-label="Affiliations">
+          <span class="pill">HumanoPhilic Systems Laboratory</span>
+          <span class="pill">Information Science and Electrical Engineering</span>
+          <span class="pill">Fukuoka, Japan</span>
+        </div>
+        <div class="actions">
+          <a class="button primary" href="#publications">Selected Publications</a>
+          <a class="button" href="mailto:choi@ait.kyushu-u.ac.jp">Email</a>
+        </div>
+      </div>
+
+      <aside class="hero-side" aria-label="Research snapshot">
+        <div class="signal-visual">
+          <svg viewBox="0 0 640 420" role="img" aria-label="Abstract wireless sensing field">
+            <defs>
+              <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="5" result="blur"/>
+                <feMerge>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+            <g fill="none" stroke="rgba(255,253,248,.62)" stroke-width="1.2">
+              <path d="M75 300 C154 184, 237 162, 350 214 S498 296, 590 116"/>
+              <path d="M70 116 C176 194, 218 296, 356 270 S532 188, 592 310"/>
+              <path d="M142 350 C210 278, 274 246, 398 298 S534 346, 620 260"/>
+            </g>
+            <g filter="url(#softGlow)">
+              <circle cx="128" cy="112" r="6" fill="#fffdf8"/>
+              <circle cx="242" cy="236" r="7" fill="#fffdf8"/>
+              <circle cx="389" cy="266" r="6" fill="#fffdf8"/>
+              <circle cx="534" cy="156" r="7" fill="#fffdf8"/>
+              <circle cx="500" cy="324" r="5" fill="#fffdf8"/>
+            </g>
+            <g fill="none" stroke="rgba(255,253,248,.22)" stroke-width="1">
+              <circle cx="242" cy="236" r="48"/>
+              <circle cx="242" cy="236" r="96"/>
+              <circle cx="534" cy="156" r="44"/>
+              <circle cx="534" cy="156" r="88"/>
+            </g>
+            <polygon points="424,28 650,94 585,415 334,344" fill="none" stroke="rgba(255,253,248,.42)" stroke-width="1.3"/>
+          </svg>
+          <div class="visual-caption">Wi-Fi CSI<br>human sensing</div>
+        </div>
+        <div class="currently">
+          <div class="label">Currently</div>
+          <ul class="current-list">
+            <li><span>01</span> Assistant Professor at Kyushu University</li>
+            <li><span>02</span> Principal investigator on sensing signal processing</li>
+            <li><span>03</span> Local Arrangement Chair for ICMU 2025</li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section" id="profile">
+      <h2 class="section-title">Profile</h2>
+      <div class="profile-grid">
+        <p class="profile-copy">An academic profile for research at the intersection of wireless technologies and human behavior: from Wi-Fi based localization and activity recognition to machine learning pipelines for ubiquitous computing.</p>
+        <div class="contact-block" id="contact">
+          <div class="contact-line">
+            <span>Name</span>
+            <strong>CHOI, Hyuckjin</strong>
+          </div>
+          <div class="contact-line">
+            <span>Role</span>
+            <strong>Assistant Professor, Ph.D.</strong>
+          </div>
+          <div class="contact-line">
+            <span>Org</span>
+            <strong>Kyushu University</strong>
+          </div>
+          <div class="contact-line">
+            <span>Email</span>
+            <a href="mailto:choi@ait.kyushu-u.ac.jp">choi [at] ait.kyushu-u.ac.jp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="research">
+      <h2 class="section-title">Research Interests</h2>
+      <div class="interest-grid">
+        <div class="interest"><strong>Wireless Sensing</strong><span>Signals</span></div>
+        <div class="interest"><strong>Human Activity Recognition</strong><span>Behavior</span></div>
+        <div class="interest"><strong>Signal Processing</strong><span>Methods</span></div>
+        <div class="interest"><strong>Ubiquitous Computing</strong><span>Systems</span></div>
+        <div class="interest"><strong>Internet of Things</strong><span>Devices</span></div>
+        <div class="interest"><strong>Machine Learning</strong><span>Models</span></div>
+        <div class="interest"><strong>Indoor Localization</strong><span>Positioning</span></div>
+        <div class="interest"><strong>Human Sensing</strong><span>Interaction</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="publications">
+      <h2 class="section-title">Selected Publications</h2>
+      <div>
+        <article class="publication">
+          <div class="pub-index">07</div>
+          <div>
+            <h3 class="item-title">Two-Time Scale RIS Phase Error and Channel Estimation Method for RIS-Aided Systems</h3>
+            <p>H. Choi and S. Jeong. IEEE Wireless Communications Letters, 2026.</p>
+          </div>
+          <div class="pub-venue">IEEE</div>
+        </article>
+        <article class="publication">
+          <div class="pub-index">06</div>
+          <div>
+            <h3 class="item-title">Human Activity Recognition from 1-D Motion Signal based on Grid Transition Labeling</h3>
+            <p>G. Li, Y. Nakamura, H. Choi, S. Fukushima, and Y. Arakawa. IEEE Access, 2025.</p>
+          </div>
+          <div class="pub-venue">Access</div>
+        </article>
+        <article class="publication">
+          <div class="pub-index">05</div>
+          <div>
+            <h3 class="item-title">WatchLogger: Keystroke Detection and Recognition of Typed Words Using Smartwatch</h3>
+            <p>G. Li, Y. Nakamura, H. Choi, S. Fukushima, and Y. Arakawa. Sensors and Materials, 2024.</p>
+          </div>
+          <div class="pub-venue">Sensors</div>
+        </article>
+        <article class="publication">
+          <div class="pub-index">04</div>
+          <div>
+            <h3 class="item-title">Bilatangulation: Measurement Error Compensation for Wi-Fi Indoor Positioning</h3>
+            <p>C. Lee, H. Choi, Y. Arakawa, D. Kim, and J. Kim. IEEE Access, 2024.</p>
+          </div>
+          <div class="pub-venue">Wi-Fi</div>
+        </article>
+        <article class="publication">
+          <div class="pub-index">01</div>
+          <div>
+            <h3 class="item-title">Wi-CaL: WiFi Sensing and Machine Learning based Device-Free Crowd Counting and Localization</h3>
+            <p>H. Choi, M. Fujimoto, T. Matsui, S. Misaki, and K. Yasumoto. IEEE Access, 2022.</p>
+          </div>
+          <div class="pub-venue">Award</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="career">
+      <h2 class="section-title">Professional Career</h2>
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="time">2022.10 - Present</div>
+          <div>
+            <h3 class="item-title">Assistant Professor</h3>
+            <p class="item-subtitle">Kyushu University, Fukuoka, Japan</p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <div class="time">2022.07 - 2022.09</div>
+          <div>
+            <h3 class="item-title">Specially Appointed Assistant Professor</h3>
+            <p class="item-subtitle">Kyushu University, Fukuoka, Japan</p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <div class="time">2022.04 - 2022.06</div>
+          <div>
+            <h3 class="item-title">Researcher</h3>
+            <p class="item-subtitle">Nara Institute of Science and Technology, Nara, Japan</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Education</h2>
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="time">2019 - 2022</div>
+          <div>
+            <h3 class="item-title">Doctor of Engineering</h3>
+            <p class="item-subtitle">Nara Institute of Science and Technology, Division of Information Science</p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <div class="time">2016 - 2018</div>
+          <div>
+            <h3 class="item-title">Master of Engineering</h3>
+            <p class="item-subtitle">Pusan National University, Electrical and Computer Engineering</p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <div class="time">2010 - 2016</div>
+          <div>
+            <h3 class="item-title">Bachelor of Engineering</h3>
+            <p class="item-subtitle">Tongmyong University, Electronics Engineering</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Awards</h2>
+      <div class="awards">
+        <div class="award"><strong>2025.12</strong><span>Outstanding Paper Award, IIAI AAI 2025-Winter</span></div>
+        <div class="award"><strong>2023.11</strong><span>Best Demonstration Runner-up Award, IoT 2023</span></div>
+        <div class="award"><strong>2023.10</strong><span>Encouragement Paper Award, DPS Workshop 2023</span></div>
+        <div class="award"><strong>2023.03</strong><span>38th Student Award of Telecom Interdisciplinary Research</span></div>
+        <div class="award"><strong>2017.01</strong><span>Best Paper Award, KICS Winter Conference 2017</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Research Grants</h2>
+      <div>
+        <article class="grant-item">
+          <div class="time">2025.04 -</div>
+          <div>
+            <h3 class="item-title">Data consistency across different wireless technologies</h3>
+            <p>Principal Investigator. KAKENHI Grant-in-Aid for Early-Career Scientists, Japan Society for the Promotion of Science.</p>
+          </div>
+        </article>
+        <article class="grant-item">
+          <div class="time">2024.04 - 2025.03</div>
+          <div>
+            <h3 class="item-title">Wi-Fi-based multi-target indoor tracking and activity recognition</h3>
+            <p>Principal Investigator. Research Grant by The Telecommunications Advancement Foundation, Japan.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Committee Activities</h2>
+      <ul class="committee-list">
+        <li><strong>2025</strong> Local Arrangement Chair, The 15th International Conference on Mobile Computing and Ubiquitous Networking</li>
+        <li><strong>2024 -</strong> TPC member, IEEE Global Communications Conference, SAC E-Health</li>
+        <li><strong>2024</strong> Poster/Demo TPC, IEEE International Conference on Smart Computing</li>
+        <li><strong>2024</strong> Poster TPC, ACM MobiSys 2024</li>
+        <li><strong>2023 -</strong> TPC member, International Conference on Mobile, Military, Maritime IT Convergence</li>
+        <li><strong>2023 -</strong> Assessor, IPSJ Kansai Branch Symposium</li>
+      </ul>
+    </section>
+
+    <footer class="footer">
+      <span>Hyuckjin Choi / Assistant Professor, Kyushu University</span>
+      <span>Wireless sensing · Human sensing · Ubiquitous computing</span>
+    </footer>
+  </main>
+</body>
+</html>
